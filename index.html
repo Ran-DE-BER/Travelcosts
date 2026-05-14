@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旅行花费</title>
-
 <link rel="apple-touch-icon" href="icon-512.png">
 
 <style>
@@ -23,33 +22,20 @@ body{
     margin:0;
     padding:16px;
     min-height:100vh;
-
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
     color:white;
-
-    background:
-    radial-gradient(circle at top left,#38bdf8 0,#0f172a 45%,#020617 100%);
+    background: radial-gradient(circle at top left,#38bdf8 0,#0f172a 45%,#020617 100%);
 }
-
-/* ========================= */
-/* 主卡片 */
-/* ========================= */
 
 .app{
     max-width:540px;
     margin:0 auto;
-
     padding:18px;
-
     border-radius:28px;
-
     background:rgba(15,23,42,0.48);
-
     backdrop-filter:blur(28px);
     -webkit-backdrop-filter:blur(28px);
-
     border:1px solid rgba(255,255,255,0.15);
-
     box-shadow:0 30px 60px rgba(0,0,0,0.45);
 }
 
@@ -65,20 +51,15 @@ h1{
     font-size:15px;
 }
 
-/* ========================= */
-/* 输入区 */
-/* ========================= */
-
 .top-area{
     margin-top:20px;
-
     display:flex;
-    gap:12px;
-    align-items:flex-start;
+    gap:14px;
+    align-items:center;
 }
 
 .left-inputs{
-    flex:1;
+    flex:0.78;
 }
 
 label{
@@ -89,24 +70,15 @@ label{
 
 input{
     width:100%;
-
     padding:14px;
-
     border-radius:18px;
-
     border:1px solid var(--glass-border);
-
     background:var(--glass);
-
     color:white;
-
     font-size:18px;
-
     outline:none;
-
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
-
     box-shadow:var(--shadow);
 }
 
@@ -114,34 +86,17 @@ input::placeholder{
     color:rgba(255,255,255,0.6);
 }
 
-/* ========================= */
-/* 添加按钮 */
-/* ========================= */
-
 .add-btn{
-    width:110px;
-    height:86px;
-
-    margin-top:30px;
-
+    width:135px;
+    height:92px;
+    margin-top:28px;
     border:none;
-    border-radius:22px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(34,197,94,0.95),
-        rgba(22,163,74,0.95)
-    );
-
+    border-radius:24px;
+    background:linear-gradient(135deg, rgba(34,197,94,0.95), rgba(22,163,74,0.95));
     color:white;
-
-    font-size:18px;
+    font-size:19px;
     font-weight:700;
-
-    box-shadow:
-    0 18px 34px rgba(22,163,74,0.45);
-
+    box-shadow:0 18px 34px rgba(22,163,74,0.45);
     cursor:pointer;
 }
 
@@ -149,13 +104,8 @@ input::placeholder{
     transform:translateY(2px);
 }
 
-/* ========================= */
-/* 分类按钮 */
-/* ========================= */
-
 .categories{
     margin-top:18px;
-
     display:flex;
     flex-wrap:wrap;
     gap:8px;
@@ -163,90 +113,47 @@ input::placeholder{
 
 .category{
     padding:10px 14px;
-
     border-radius:999px;
-
     border:1px solid rgba(255,255,255,0.25);
-
     background:rgba(255,255,255,0.12);
-
     color:white;
-
     font-size:14px;
-
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-
     box-shadow:0 10px 20px rgba(0,0,0,0.2);
-
     cursor:pointer;
 }
 
 .category.selected{
-    background:
-    linear-gradient(
-        135deg,
-        rgba(34,197,94,0.9),
-        rgba(22,163,74,0.9)
-    );
-
+    background:linear-gradient(135deg, rgba(34,197,94,0.9), rgba(22,163,74,0.9));
     border-color:rgba(255,255,255,0.5);
 }
 
-/* ========================= */
-/* 今日总计 */
-/* ========================= */
-
 .total-box{
     margin-top:18px;
-
     padding:14px;
-
     border-radius:20px;
-
     background:rgba(255,255,255,0.12);
-
     border:1px solid rgba(255,255,255,0.2);
-
     backdrop-filter:blur(18px);
-
+    -webkit-backdrop-filter:blur(18px);
     font-size:18px;
     font-weight:700;
 }
 
-/* ========================= */
-/* 导出按钮 */
-/* ========================= */
-
 .export-btn{
     width:100%;
     margin-top:16px;
-
     padding:14px;
-
     border:none;
     border-radius:20px;
-
-    background:
-    linear-gradient(
-        135deg,
-        rgba(59,130,246,0.95),
-        rgba(37,99,235,0.95)
-    );
-
+    background:linear-gradient(135deg, rgba(59,130,246,0.95), rgba(37,99,235,0.95));
     color:white;
-
     font-size:17px;
     font-weight:600;
-
     box-shadow:0 18px 34px rgba(37,99,235,0.45);
-
     cursor:pointer;
 }
-
-/* ========================= */
-/* 记录列表 */
-/* ========================= */
 
 .records{
     margin-top:18px;
@@ -254,26 +161,19 @@ input::placeholder{
 
 .record{
     position:relative;
-
     overflow:hidden;
-
     margin-bottom:10px;
-
     border-radius:20px;
-
-    background:rgba(255,255,255,0.12);
-
     border:1px solid rgba(255,255,255,0.2);
-
     backdrop-filter:blur(18px);
-
-    transition:transform 0.2s ease;
+    -webkit-backdrop-filter:blur(18px);
 }
 
 .record-content{
     padding:14px;
-    background:transparent;
-
+    position:relative;
+    z-index:2;
+    background:rgba(255,255,255,0.12);
     transition:transform 0.25s ease;
 }
 
@@ -295,24 +195,21 @@ input::placeholder{
 
 .record-bottom{
     margin-top:6px;
-
     font-size:13px;
     opacity:0.8;
 }
 
 .delete-area{
     position:absolute;
-
     right:0;
     top:0;
     height:100%;
     width:90px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:#dc2626;
+    z-index:1;
 }
 
 .delete-btn{
@@ -323,13 +220,11 @@ input::placeholder{
     font-weight:700;
 }
 
-/* 已导出绿色 */
-.exported{
+.exported .record-content{
     background:rgba(34,197,94,0.18);
 }
 
-/* 未导出红色 */
-.not-exported{
+.not-exported .record-content{
     background:rgba(248,113,113,0.18);
 }
 </style>
@@ -340,162 +235,82 @@ input::placeholder{
 <div class="app">
 
 <h1>旅行花费</h1>
+<div class="day-line" id="dayLine">Day 1 · 旅行第 1 天</div>
 
-<div class="day-line" id="dayLine">
-Day 1 · 旅行第 1 天
-</div>
-
-<!-- 输入 -->
 <div class="top-area">
-
     <div class="left-inputs">
-
         <label>日期</label>
         <input type="date" id="date">
 
         <label>金额 (€)</label>
-        <input
-            type="text"
-            id="amount"
-            inputmode="numeric"
-            placeholder="例如：12,50">
-
+        <input type="text" id="amount" inputmode="numeric" placeholder="例如：12,50">
     </div>
 
-    <button class="add-btn" onclick="addRecord()">
-        添加
-    </button>
-
+    <button class="add-btn" onclick="addRecord()">添加</button>
 </div>
 
-<!-- 分类 -->
 <div class="categories" id="categories">
-
-<button class="category" data-cat="🍜 吃饭">🍜 吃饭</button>
-<button class="category" data-cat="☕ 咖啡">☕ 咖啡</button>
-<button class="category" data-cat="🚆 交通">🚆 交通</button>
-<button class="category" data-cat="🏨 酒店">🏨 酒店</button>
-<button class="category" data-cat="🛍 购物">🛍 购物</button>
-<button class="category" data-cat="🎫 门票">🎫 门票</button>
-<button class="category" data-cat="🧴 日用品">🧴 日用品</button>
-<button class="category" data-cat="🎁 礼物">🎁 礼物</button>
-<button class="category" data-cat="📱 其他">📱 其他</button>
-
+    <button class="category" data-cat="🍜 吃饭">🍜 吃饭</button>
+    <button class="category" data-cat="☕ 咖啡">☕ 咖啡</button>
+    <button class="category" data-cat="🚆 交通">🚆 交通</button>
+    <button class="category" data-cat="🏨 酒店">🏨 酒店</button>
+    <button class="category" data-cat="🛍 购物">🛍 购物</button>
+    <button class="category" data-cat="🎫 门票">🎫 门票</button>
+    <button class="category" data-cat="🧴 日用品">🧴 日用品</button>
+    <button class="category" data-cat="🎁 礼物">🎁 礼物</button>
+    <button class="category" data-cat="📱 其他">📱 其他</button>
 </div>
 
-<!-- 今日总计 -->
-<div class="total-box" id="totalBox">
-今日总花费：0,00 €
-</div>
+<div class="total-box" id="totalBox">今日总花费：0,00 €</div>
 
-<!-- 导出 -->
-<button class="export-btn" onclick="exportCSV()">
-导出 CSV
-</button>
+<button class="export-btn" onclick="exportCSV()">导出 CSV</button>
 
-<!-- 记录 -->
 <div class="records" id="records"></div>
 
 </div>
 
 <script>
-
-/* ====================== */
-/* 数据 */
-/* ====================== */
-
 const STORAGE_KEY = "travel_expense_app_v1";
-
 let selectedCategory = "";
-
-/* ====================== */
-/* 日期 */
-/* ====================== */
 
 date.value = new Date().toISOString().slice(0,10);
 
-/* ====================== */
-/* 分类按钮 */
-/* ====================== */
-
 document.querySelectorAll(".category").forEach(btn=>{
-
     btn.onclick = ()=>{
-
-        if(selectedCategory === btn.dataset.cat){
-            selectedCategory = "";
-        }else{
-            selectedCategory = btn.dataset.cat;
-        }
-
+        selectedCategory = selectedCategory === btn.dataset.cat ? "" : btn.dataset.cat;
         updateCategoryButtons();
     };
-
 });
 
 function updateCategoryButtons(){
-
     document.querySelectorAll(".category").forEach(btn=>{
-
-        btn.classList.toggle(
-            "selected",
-            btn.dataset.cat === selectedCategory
-        );
-
+        btn.classList.toggle("selected", btn.dataset.cat === selectedCategory);
     });
-
 }
 
-/* ====================== */
-/* 自动格式化金额 */
-/* ====================== */
-
 amount.addEventListener("input",()=>{
-
-    let v = amount.value
-        .replace(/\./g,"")
-        .replace(/,/g,"")
-        .replace(/\D/g,"");
-
+    let v = amount.value.replace(/\./g,"").replace(/,/g,"").replace(/\D/g,"");
     if(v.length === 0){
         amount.value = "";
         return;
     }
-
     while(v.length < 3){
         v = "0" + v;
     }
-
     const euros = v.slice(0,-2);
     const cents = v.slice(-2);
-
     amount.value = `${parseInt(euros)},${cents}`;
-
 });
 
-/* ====================== */
-/* 记录 */
-/* ====================== */
-
 function loadRecords(){
-    return JSON.parse(
-        localStorage.getItem(STORAGE_KEY) || "[]"
-    );
+    return JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
 }
 
 function saveRecords(list){
-    localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify(list)
-    );
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
 }
 
-/* ====================== */
-/* 添加记录 */
-/* ====================== */
-
 function addRecord(){
-
     const d = date.value;
     const a = amount.value;
 
@@ -509,199 +324,104 @@ function addRecord(){
         return;
     }
 
-    const num = parseFloat(
-        a.replace(",",".")
-    );
-
+    const num = parseFloat(a.replace(",","."));
     if(isNaN(num)){
         alert("金额格式错误");
         return;
     }
 
     const rec = {
-
         id: Date.now(),
-
         date: d,
-
         amount: -Math.abs(num),
-
         category: selectedCategory,
-
-        time: new Date().toLocaleTimeString(
-            "de-DE",
-            {
-                hour:"2-digit",
-                minute:"2-digit"
-            }
-        ),
-
+        time: new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"}),
         exported:false
-
     };
 
     const list = loadRecords();
-
     list.unshift(rec);
-
     saveRecords(list);
 
     amount.value = "";
-
     render();
-
 }
-
-/* ====================== */
-/* 删除 */
-/* ====================== */
 
 function deleteRecord(id){
-
-    if(!confirm("确认删除这条记录吗？")){
-        return;
-    }
+    if(!confirm("确认删除这条记录吗？")) return;
 
     let list = loadRecords();
-
     list = list.filter(r=>r.id !== id);
-
     saveRecords(list);
-
     render();
-
 }
 
-/* ====================== */
-/* 渲染 */
-/* ====================== */
-
 function render(){
-
-    const container =
-        document.getElementById("records");
-
+    const container = document.getElementById("records");
     container.innerHTML = "";
 
     const list = loadRecords();
+    const today = date.value;
 
     let total = 0;
 
     list.forEach(rec=>{
-
-        total += rec.amount;
+        if(rec.date === today){
+            total += rec.amount;
+        }
 
         const div = document.createElement("div");
-
-        div.className =
-            "record " +
-            (rec.exported
-                ? "exported"
-                : "not-exported");
+        div.className = "record " + (rec.exported ? "exported" : "not-exported");
 
         div.innerHTML = `
-
-        <div class="delete-area">
-            <button
-                class="delete-btn"
-                onclick="deleteRecord(${rec.id})">
-                删除
-            </button>
-        </div>
-
-        <div class="record-content">
-
-            <div class="record-top">
-
-                <div class="record-category">
-                    ${rec.category}
-                </div>
-
-                <div class="record-amount">
-                    ${rec.amount.toFixed(2)} €
-                </div>
-
+            <div class="delete-area">
+                <button class="delete-btn" onclick="deleteRecord(${rec.id})">删除</button>
             </div>
 
-            <div class="record-bottom">
-                ${formatDate(rec.date)}
-                ·
-                ${rec.time}
+            <div class="record-content">
+                <div class="record-top">
+                    <div class="record-category">${rec.category}</div>
+                    <div class="record-amount">${rec.amount.toFixed(2)} €</div>
+                </div>
+                <div class="record-bottom">${formatDate(rec.date)} · ${rec.time}</div>
             </div>
-
-        </div>
         `;
 
         addSwipe(div);
-
         container.appendChild(div);
-
     });
 
-    document.getElementById("totalBox")
-        .innerHTML =
+    document.getElementById("totalBox").innerHTML =
         `今日总花费：${total.toFixed(2)} €`;
-
 }
-
-/* ====================== */
-/* 日期格式 */
-/* ====================== */
 
 function formatDate(d){
-
     const p = d.split("-");
-
     return `${p[2]}-${p[1]}-${p[0]}`;
-
 }
-
-/* ====================== */
-/* 滑动删除 */
-/* ====================== */
 
 function addSwipe(el){
-
-    const content =
-        el.querySelector(".record-content");
-
+    const content = el.querySelector(".record-content");
     let startX = 0;
 
-    content.addEventListener(
-        "touchstart",
-        e=>{
-            startX = e.touches[0].clientX;
+    content.addEventListener("touchstart",e=>{
+        startX = e.touches[0].clientX;
+    });
+
+    content.addEventListener("touchmove",e=>{
+        const dx = e.touches[0].clientX - startX;
+
+        if(dx < -30){
+            content.style.transform = "translateX(-90px)";
         }
-    );
 
-    content.addEventListener(
-        "touchmove",
-        e=>{
-
-            const dx =
-                e.touches[0].clientX - startX;
-
-            if(dx < -30){
-                content.style.transform =
-                    "translateX(-90px)";
-            }
-
-            if(dx > 30){
-                content.style.transform =
-                    "translateX(0px)";
-            }
-
+        if(dx > 30){
+            content.style.transform = "translateX(0px)";
         }
-    );
-
+    });
 }
 
-/* ====================== */
-/* 导出 CSV */
-/* ====================== */
-
 function exportCSV(){
-
     const list = loadRecords();
 
     if(list.length === 0){
@@ -709,67 +429,35 @@ function exportCSV(){
         return;
     }
 
-    let csv =
-        "日期,金额,分类,时间\n";
+    let csv = "日期,金额,分类,时间\n";
 
     list.forEach(r=>{
-
-        csv +=
-            `"${formatDate(r.date)}",` +
-            `"${r.amount}",` +
-            `"${r.category}",` +
-            `"${r.time}"\n`;
-
+        csv += `"${formatDate(r.date)}","${r.amount}","${r.category}","${r.time}"\n`;
         r.exported = true;
-
     });
 
     saveRecords(list);
-
     render();
 
-    const blob =
-        new Blob([csv],{
-            type:"text/csv"
-        });
-
-    const file =
-        new File(
-            [blob],
-            "travel_expense.csv",
-            {type:"text/csv"}
-        );
+    const blob = new Blob([csv],{type:"text/csv"});
+    const file = new File([blob],"travel_expense.csv",{type:"text/csv"});
 
     if(navigator.share){
-
         navigator.share({
             files:[file],
             title:"旅行花费"
         });
-
     }else{
-
-        const a =
-            document.createElement("a");
-
-        a.href =
-            URL.createObjectURL(blob);
-
-        a.download =
-            "travel_expense.csv";
-
+        const a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = "travel_expense.csv";
         a.click();
-
     }
-
 }
 
-/* ====================== */
-/* 初始化 */
-/* ====================== */
+date.addEventListener("change", render);
 
 render();
-
 </script>
 
 </body>
