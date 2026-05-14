@@ -4,181 +4,443 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>旅行花费</title>
+
 <link rel="apple-touch-icon" href="icon-512.png">
 
 <style>
-*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+
+*{
+    box-sizing:border-box;
+    -webkit-tap-highlight-color:transparent;
+}
 
 body{
     margin:0;
     padding:16px;
+
     min-height:100vh;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-    background:linear-gradient(180deg,#e8f5ef,#dff3e8);
+
+    font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
+    background:
+    linear-gradient(
+        180deg,
+        #e8f5ef,
+        #dff3e8
+    );
+
     color:#111827;
 }
+
+/* 主卡片 */
 
 .app{
     max-width:540px;
+
     margin:0 auto;
+
     padding:18px;
+
     border-radius:30px;
-    background:rgba(255,255,255,0.78);
+
+    background:
+    rgba(255,255,255,0.78);
+
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.85);
-    box-shadow:0 20px 50px rgba(0,0,0,0.15);
+
+    border:
+    1px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,0.15);
 }
 
-h1{margin:0;font-size:30px;font-weight:800;}
-.day-line{margin-top:4px;color:#6b7280;font-size:15px;}
+/* 标题 */
+
+h1{
+    margin:0;
+    font-size:30px;
+    font-weight:800;
+}
+
+.day-line{
+    margin-top:4px;
+
+    color:#6b7280;
+
+    font-size:15px;
+}
+
+/* 顶部输入区域 */
 
 .top-area{
     margin-top:22px;
-    display:block;
 }
 
+/* 每个输入块 */
+
 .field-block{
-    margin-bottom:14px;
+    margin-bottom:16px;
 }
+
+/* 标签 */
 
 label{
     display:block;
+
     margin:0 0 6px 2px;
+
     font-size:14px;
     font-weight:700;
+
     color:#374151;
 }
 
-input{
+/* ========================= */
+/* 日期输入框（单独） */
+/* 以后你只改这里即可 */
+/* ========================= */
+
+#date{
+
     width:100%;
+
     height:58px;
+
     padding:14px;
+
     border-radius:18px;
-    border:1px solid rgba(255,255,255,0.85);
-    background:rgba(255,255,255,0.55);
+
+    border:
+    1px solid rgba(255,255,255,0.85);
+
+    background:
+    rgba(255,255,255,0.55);
+
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
+
     font-size:19px;
+
     color:#111827;
+
     outline:none;
-    box-shadow:inset 0 1px 2px rgba(255,255,255,0.6),0 6px 16px rgba(0,0,0,0.08);
+
+    box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.6),
+    0 6px 16px rgba(0,0,0,0.08);
 }
 
-input::placeholder{color:#9ca3af;}
+/* ========================= */
+/* 金额输入框（单独） */
+/* 以后你只改这里即可 */
+/* ========================= */
+
+#amount{
+
+    width:100%;
+
+    height:58px;
+
+    padding:14px;
+
+    border-radius:18px;
+
+    border:
+    1px solid rgba(255,255,255,0.85);
+
+    background:
+    rgba(255,255,255,0.55);
+
+    backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:blur(20px);
+
+    font-size:19px;
+
+    color:#111827;
+
+    outline:none;
+
+    box-shadow:
+    inset 0 1px 2px rgba(255,255,255,0.6),
+    0 6px 16px rgba(0,0,0,0.08);
+}
+
+/* placeholder */
+
+#amount::placeholder{
+    color:#9ca3af;
+}
+
+/* 添加按钮 */
 
 .add-btn{
+
     width:100%;
-    margin-top:4px;
-    padding:15px;
+
+    padding:16px;
+
     border:none;
+
     border-radius:22px;
-    background:linear-gradient(135deg,#07c160,#05a84f);
+
+    background:
+    linear-gradient(
+        135deg,
+        #07c160,
+        #05a84f
+    );
+
     color:white;
+
     font-size:18px;
     font-weight:800;
+
     cursor:pointer;
-    box-shadow:0 14px 28px rgba(7,193,96,0.28);
+
+    box-shadow:
+    0 14px 28px rgba(7,193,96,0.28);
+
+    transition:0.15s;
 }
 
-.categories{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;}
+.add-btn:active{
+    transform:translateY(2px);
+}
+
+/* 分类 */
+
+.categories{
+    margin-top:18px;
+
+    display:flex;
+    flex-wrap:wrap;
+
+    gap:10px;
+}
 
 .category{
-    padding:10px 14px;
+
+    padding:
+    10px 14px;
+
     border-radius:999px;
-    border:1px solid rgba(255,255,255,0.9);
-    background:rgba(255,255,255,0.62);
+
+    border:
+    1px solid rgba(255,255,255,0.9);
+
+    background:
+    rgba(255,255,255,0.62);
+
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
+
     color:#374151;
+
     font-size:14px;
     font-weight:600;
+
     cursor:pointer;
-    box-shadow:0 5px 14px rgba(0,0,0,0.08);
+
+    box-shadow:
+    0 5px 14px rgba(0,0,0,0.08);
 }
 
 .category.selected{
-    background:linear-gradient(135deg,#07c160,#05a84f);
+
+    background:
+    linear-gradient(
+        135deg,
+        #07c160,
+        #05a84f
+    );
+
     color:white;
+
     border-color:#07c160;
 }
 
-.total-box,.summary-box{
+/* 汇总 */
+
+.total-box,
+.summary-box{
+
     margin-top:18px;
+
     padding:15px;
+
     border-radius:22px;
-    background:rgba(255,255,255,0.62);
+
+    background:
+    rgba(255,255,255,0.62);
+
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.85);
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+    border:
+    1px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
 }
 
-.total-box{font-size:22px;font-weight:800;}
-.summary-box{font-size:15px;line-height:1.8;}
+.total-box{
+    font-size:22px;
+    font-weight:800;
+}
+
+.summary-box{
+    font-size:15px;
+    line-height:1.8;
+}
+
+/* 导出 */
 
 .export-btn{
+
     width:100%;
+
     margin-top:18px;
+
     padding:15px;
+
     border:none;
+
     border-radius:22px;
-    background:linear-gradient(135deg,#07c160,#05a84f);
+
+    background:
+    linear-gradient(
+        135deg,
+        #07c160,
+        #05a84f
+    );
+
     color:white;
+
     font-size:18px;
     font-weight:800;
+
     cursor:pointer;
-    box-shadow:0 14px 28px rgba(7,193,96,0.28);
+
+    box-shadow:
+    0 14px 28px rgba(7,193,96,0.28);
 }
 
-.records{margin-top:18px;}
+/* 记录 */
+
+.records{
+    margin-top:18px;
+}
 
 .record{
+
     position:relative;
+
     overflow:hidden;
+
     margin-bottom:12px;
+
     border-radius:22px;
-    background:rgba(255,255,255,0.62);
+
+    background:
+    rgba(255,255,255,0.62);
+
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-    border:1px solid rgba(255,255,255,0.85);
-    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+
+    border:
+    1px solid rgba(255,255,255,0.85);
+
+    box-shadow:
+    0 8px 20px rgba(0,0,0,0.08);
 }
 
 .record-content{
+
     padding:14px;
+
     position:relative;
+
     z-index:2;
+
     transition:transform 0.25s ease;
 }
 
-.record-top{display:flex;justify-content:space-between;align-items:center;gap:10px;}
-.record-category{font-size:17px;font-weight:700;}
-.record-amount{font-size:19px;font-weight:800;}
-.record-bottom{margin-top:6px;color:#6b7280;font-size:13px;}
+.record-top{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.record-category{
+    font-size:17px;
+    font-weight:700;
+}
+
+.record-amount{
+    font-size:19px;
+    font-weight:800;
+}
+
+.record-bottom{
+
+    margin-top:6px;
+
+    color:#6b7280;
+
+    font-size:13px;
+}
+
+/* 删除区域 */
 
 .delete-area{
+
     position:absolute;
+
     right:0;
     top:0;
+
     width:92px;
     height:100%;
+
     background:#ef4444;
+
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
 .delete-btn{
+
     border:none;
+
     background:none;
+
     color:white;
+
     font-size:16px;
     font-weight:800;
 }
 
-.exported .record-content{background:rgba(34,197,94,0.12);}
-.not-exported .record-content{background:rgba(255,255,255,0.35);}
+.exported .record-content{
+    background:rgba(34,197,94,0.12);
+}
+
+.not-exported .record-content{
+    background:rgba(255,255,255,0.35);
+}
+
 </style>
 </head>
 
@@ -187,23 +449,45 @@ input::placeholder{color:#9ca3af;}
 <div class="app">
 
 <h1>旅行花费</h1>
-<div class="day-line">Day 1 · 旅行第 1 天</div>
+
+<div class="day-line">
+Day 1 · 旅行第 1 天
+</div>
 
 <div class="top-area">
+
     <div class="field-block">
+
         <label>日期</label>
-        <input type="date" id="date">
+
+        <input
+        type="date"
+        id="date">
+
     </div>
 
     <div class="field-block">
+
         <label>金额 (¥)</label>
-        <input type="text" id="amount" inputmode="numeric" placeholder="例如：12,50">
+
+        <input
+        type="text"
+        id="amount"
+        inputmode="numeric"
+        placeholder="例如：12,50">
+
     </div>
 
-    <button class="add-btn" onclick="addRecord()">添加</button>
+    <button
+    class="add-btn"
+    onclick="addRecord()">
+    添加
+    </button>
+
 </div>
 
 <div class="categories">
+
 <button class="category" data-cat="🍜 吃饭">🍜 吃饭</button>
 <button class="category" data-cat="☕ 咖啡">☕ 咖啡</button>
 <button class="category" data-cat="🚆 交通">🚆 交通</button>
@@ -213,196 +497,445 @@ input::placeholder{color:#9ca3af;}
 <button class="category" data-cat="🧴 日用品">🧴 日用品</button>
 <button class="category" data-cat="🎁 礼物">🎁 礼物</button>
 <button class="category" data-cat="📱 其他">📱 其他</button>
+
 </div>
 
-<div class="total-box" id="totalBox">今日总花费：¥ 0,00</div>
+<div class="total-box" id="totalBox">
+今日总花费：¥ 0,00
+</div>
 
-<button class="export-btn" onclick="exportCSV()">导出 CSV</button>
+<button
+class="export-btn"
+onclick="exportCSV()">
+导出 CSV
+</button>
 
-<div class="summary-box" id="summaryBox">分类总结</div>
+<div class="summary-box" id="summaryBox">
+分类总结
+</div>
 
 <div class="records" id="records"></div>
 
 </div>
 
 <script>
-const STORAGE_KEY="travel_expense_app_final";
-let selectedCategory="";
 
-date.value=new Date().toISOString().slice(0,10);
+const STORAGE_KEY =
+"travel_expense_app_final";
 
-document.querySelectorAll(".category").forEach(btn=>{
-    btn.onclick=()=>{
-        selectedCategory=selectedCategory===btn.dataset.cat?"":btn.dataset.cat;
+let selectedCategory = "";
+
+/* 默认日期 */
+
+date.value =
+new Date()
+.toISOString()
+.slice(0,10);
+
+/* 分类按钮 */
+
+document
+.querySelectorAll(".category")
+.forEach(btn=>{
+
+    btn.onclick = ()=>{
+
+        selectedCategory =
+        selectedCategory === btn.dataset.cat
+        ? ""
+        : btn.dataset.cat;
+
         updateCategoryButtons();
     };
 });
 
 function updateCategoryButtons(){
-    document.querySelectorAll(".category").forEach(btn=>{
-        btn.classList.toggle("selected",btn.dataset.cat===selectedCategory);
+
+    document
+    .querySelectorAll(".category")
+    .forEach(btn=>{
+
+        btn.classList.toggle(
+            "selected",
+            btn.dataset.cat === selectedCategory
+        );
+
     });
 }
 
+/* 金额格式化 */
+
 amount.addEventListener("input",()=>{
-    let v=amount.value.replace(/\./g,"").replace(/,/g,"").replace(/\D/g,"");
-    if(v.length===0){amount.value="";return;}
-    while(v.length<3){v="0"+v;}
-    const yuan=v.slice(0,-2);
-    const fen=v.slice(-2);
-    amount.value=`${parseInt(yuan)},${fen}`;
+
+    let v =
+    amount.value
+    .replace(/\./g,"")
+    .replace(/,/g,"")
+    .replace(/\D/g,"");
+
+    if(v.length===0){
+        amount.value="";
+        return;
+    }
+
+    while(v.length<3){
+        v="0"+v;
+    }
+
+    const euro=v.slice(0,-2);
+    const cent=v.slice(-2);
+
+    amount.value=
+    `${parseInt(euro)},${cent}`;
+
 });
 
+/* 存储 */
+
 function loadRecords(){
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)||"[]");
+
+    return JSON.parse(
+        localStorage.getItem(STORAGE_KEY)||"[]"
+    );
 }
 
 function saveRecords(list){
-    localStorage.setItem(STORAGE_KEY,JSON.stringify(list));
+
+    localStorage.setItem(
+        STORAGE_KEY,
+        JSON.stringify(list)
+    );
 }
 
+/* 添加 */
+
 function addRecord(){
-    const d=date.value;
-    const a=amount.value;
 
-    if(!a){alert("请输入金额");return;}
-    if(!selectedCategory){alert("请选择分类");return;}
+    const d = date.value;
 
-    const num=parseFloat(a.replace(",","."));
-    if(isNaN(num)){alert("金额格式错误");return;}
+    const a = amount.value;
 
-    const rec={
+    if(!a){
+
+        alert("请输入金额");
+
+        return;
+    }
+
+    if(!selectedCategory){
+
+        alert("请选择分类");
+
+        return;
+    }
+
+    const num =
+    parseFloat(
+        a.replace(",",".")
+    );
+
+    if(isNaN(num)){
+
+        alert("金额格式错误");
+
+        return;
+    }
+
+    const rec = {
+
         id:Date.now(),
+
         date:d,
+
         amount:-Math.abs(num),
+
         category:selectedCategory,
-        time:new Date().toLocaleTimeString("de-DE",{hour:"2-digit",minute:"2-digit"}),
+
+        time:new Date()
+        .toLocaleTimeString(
+            "de-DE",
+            {
+                hour:"2-digit",
+                minute:"2-digit"
+            }
+        ),
+
         exported:false
     };
 
-    const list=loadRecords();
+    const list = loadRecords();
+
     list.unshift(rec);
+
     saveRecords(list);
+
     amount.value="";
+
     render();
 }
+
+/* 删除 */
 
 function deleteRecord(id){
-    if(!confirm("确认删除吗？")) return;
+
+    if(!confirm("确认删除吗？")){
+        return;
+    }
+
     let list=loadRecords();
-    list=list.filter(r=>r.id!==id);
+
+    list=
+    list.filter(r=>r.id!==id);
+
     saveRecords(list);
+
     render();
 }
 
+/* 渲染 */
+
 function render(){
-    const container=document.getElementById("records");
+
+    const container=
+    document.getElementById("records");
+
     container.innerHTML="";
 
     const list=loadRecords();
+
     const today=date.value;
+
     let total=0;
 
     list.forEach(rec=>{
-        if(rec.date===today){total+=rec.amount;}
 
-        const div=document.createElement("div");
-        div.className="record "+(rec.exported?"exported":"not-exported");
+        if(rec.date===today){
+            total+=rec.amount;
+        }
+
+        const div=
+        document.createElement("div");
+
+        div.className=
+        "record "+
+        (
+            rec.exported
+            ? "exported"
+            : "not-exported"
+        );
 
         div.innerHTML=`
+
         <div class="delete-area">
-            <button class="delete-btn" onclick="deleteRecord(${rec.id})">删除</button>
+
+            <button
+            class="delete-btn"
+            onclick="deleteRecord(${rec.id})">
+            删除
+            </button>
+
         </div>
 
         <div class="record-content">
+
             <div class="record-top">
-                <div class="record-category">${rec.category}</div>
-                <div class="record-amount">¥ ${formatAmount(rec.amount)}</div>
+
+                <div class="record-category">
+                ${rec.category}
+                </div>
+
+                <div class="record-amount">
+                ¥ ${formatAmount(rec.amount)}
+                </div>
+
             </div>
-            <div class="record-bottom">${formatDate(rec.date)} · ${rec.time}</div>
-        </div>`;
+
+            <div class="record-bottom">
+            ${formatDate(rec.date)}
+            ·
+            ${rec.time}
+            </div>
+
+        </div>
+        `;
 
         addSwipe(div);
+
         container.appendChild(div);
+
     });
 
-    document.getElementById("totalBox").innerHTML=`今日总花费：¥ ${formatAmount(total)}`;
+    document
+    .getElementById("totalBox")
+    .innerHTML=
+    `今日总花费：¥ ${formatAmount(total)}`;
+
     renderSummary(list);
 }
 
+/* 分类总结 */
+
 function renderSummary(list){
+
     const summary={};
+
     let grandTotal=0;
 
     list.forEach(rec=>{
-        if(!summary[rec.category]) summary[rec.category]=0;
+
+        if(!summary[rec.category]){
+            summary[rec.category]=0;
+        }
+
         summary[rec.category]+=rec.amount;
+
         grandTotal+=rec.amount;
     });
 
-    let html=`分类总结：<br>总花费：¥ ${formatAmount(grandTotal)}<br><br>`;
+    let html=
+    `分类总结：<br>
+    总花费：¥ ${formatAmount(grandTotal)}<br><br>`;
 
     Object.keys(summary).forEach(cat=>{
-        html+=`${cat}：¥ ${formatAmount(summary[cat])}<br>`;
+
+        html+=
+        `${cat}：
+        ¥ ${formatAmount(summary[cat])}<br>`;
     });
 
-    document.getElementById("summaryBox").innerHTML=html;
+    document
+    .getElementById("summaryBox")
+    .innerHTML=html;
 }
+
+/* 金额格式 */
 
 function formatAmount(num){
-    return num.toFixed(2).replace(".",",");
+
+    return num
+    .toFixed(2)
+    .replace(".",",");
 }
 
+/* 日期格式 */
+
 function formatDate(d){
+
     const p=d.split("-");
+
     return `${p[2]}-${p[1]}-${p[0]}`;
 }
 
+/* 滑动删除 */
+
 function addSwipe(el){
-    const content=el.querySelector(".record-content");
+
+    const content=
+    el.querySelector(".record-content");
+
     let startX=0;
 
-    content.addEventListener("touchstart",e=>{
-        startX=e.touches[0].clientX;
-    });
+    content.addEventListener(
+        "touchstart",
+        e=>{
+            startX=
+            e.touches[0].clientX;
+        }
+    );
 
-    content.addEventListener("touchmove",e=>{
-        const dx=e.touches[0].clientX-startX;
-        if(dx<-30){content.style.transform="translateX(-92px)";}
-        if(dx>30){content.style.transform="translateX(0px)";}
-    });
+    content.addEventListener(
+        "touchmove",
+        e=>{
+
+            const dx=
+            e.touches[0].clientX-startX;
+
+            if(dx<-30){
+
+                content.style.transform=
+                "translateX(-92px)";
+            }
+
+            if(dx>30){
+
+                content.style.transform=
+                "translateX(0px)";
+            }
+
+        }
+    );
 }
 
+/* 导出 */
+
 function exportCSV(){
+
     const list=loadRecords();
 
-    if(list.length===0){alert("没有记录");return;}
+    if(list.length===0){
 
-    let csv="日期,金额,分类,时间\n";
+        alert("没有记录");
+
+        return;
+    }
+
+    let csv=
+    "日期,金额,分类,时间\n";
 
     list.forEach(r=>{
-        csv+=`"${formatDate(r.date)}","${formatAmount(r.amount)}","${r.category}","${r.time}"\n`;
+
+        csv+=
+        `"${formatDate(r.date)}","${formatAmount(r.amount)}","${r.category}","${r.time}"\n`;
+
         r.exported=true;
     });
 
     saveRecords(list);
+
     render();
 
-    const blob=new Blob([csv],{type:"text/csv"});
-    const file=new File([blob],"travel_expense.csv",{type:"text/csv"});
+    const blob=
+    new Blob(
+        [csv],
+        {type:"text/csv"}
+    );
+
+    const file=
+    new File(
+        [blob],
+        "travel_expense.csv",
+        {type:"text/csv"}
+    );
 
     if(navigator.share){
-        navigator.share({files:[file],title:"旅行花费"});
+
+        navigator.share({
+            files:[file],
+            title:"旅行花费"
+        });
+
     }else{
-        const a=document.createElement("a");
-        a.href=URL.createObjectURL(blob);
-        a.download="travel_expense.csv";
+
+        const a=
+        document.createElement("a");
+
+        a.href=
+        URL.createObjectURL(blob);
+
+        a.download=
+        "travel_expense.csv";
+
         a.click();
     }
 }
 
-date.addEventListener("change",render);
+date.addEventListener(
+    "change",
+    render
+);
+
 render();
+
 </script>
 
 </body>
