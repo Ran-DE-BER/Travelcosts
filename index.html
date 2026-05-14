@@ -242,7 +242,7 @@ input::placeholder{
         <label>日期</label>
         <input type="date" id="date">
 
-        <label>金额 (€)</label>
+        <label>金额 (¥)</label>
         <input type="text" id="amount" inputmode="numeric" placeholder="例如：12,50">
     </div>
 
@@ -261,7 +261,7 @@ input::placeholder{
     <button class="category" data-cat="📱 其他">📱 其他</button>
 </div>
 
-<div class="total-box" id="totalBox">今日总花费：0,00 €</div>
+<div class="total-box" id="totalBox">今日总花费：0,00 ¥</div>
 
 <button class="export-btn" onclick="exportCSV()">导出 CSV</button>
 
@@ -392,7 +392,7 @@ function render(){
     });
 
     document.getElementById("totalBox").innerHTML =
-        `今日总花费：${total.toFixed(2)} €`;
+        `今日总花费：¥{total.toFixed(2)} €`;
 }
 
 function formatDate(d){
